@@ -17,5 +17,8 @@ namespace FrizerskiSalonBackend.Models
         public int cena { get; set; }
 
 
+        
+
+
     }
 }
