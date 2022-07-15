@@ -27,7 +27,7 @@ namespace FrizerskiSalonBackend.Controllers
         {
             var hero = await _context.Proizvod.FindAsync(id);
             if (hero == null)
-                return BadRequest("Hero not found.");
+                return BadRequest("Proizovd not found.");
             return Ok(hero);
         }
 
@@ -45,7 +45,7 @@ namespace FrizerskiSalonBackend.Controllers
         {
             var dbHero = await _context.Proizvod.FindAsync(request.proizvodId);
             if (dbHero == null)
-                return BadRequest("Hero not found.");
+                return BadRequest("Proizvod not found.");
 
             dbHero.naziv = request.naziv;
             dbHero.opis = request.opis;
@@ -61,7 +61,7 @@ namespace FrizerskiSalonBackend.Controllers
         {
             var dbHero = await _context.Proizvod.FindAsync(id);
             if (dbHero == null)
-                return BadRequest("Hero not found.");
+                return BadRequest("Proizvod not found.");
 
             _context.Proizvod.Remove(dbHero);
             await _context.SaveChangesAsync();
